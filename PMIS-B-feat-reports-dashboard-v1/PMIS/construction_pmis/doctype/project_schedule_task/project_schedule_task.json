@@ -1,0 +1,139 @@
+{
+    "name": "Project Schedule Task",
+    "engine": "InnoDB",
+    "is_submittable": 0,
+    "ischild": 0,
+    "issingle": 0,
+    "istable": 0,
+    "module": "Construction PMIS",
+    "autoname": "format:TASK-{project}-{#####}",
+    "creation": "YYYY-MM-DD HH:MM:SS.NNNNNN",
+    "modified": "YYYY-MM-DD HH:MM:SS.NNNNNN",
+    "modified_by": "Administrator",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "report": 1,
+            "share": 1
+        }
+    ],
+    "links": [
+        {
+            "link_doctype": "Project",
+            "link_fieldname": "project"
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1,
+    "fields": [
+        {
+            "fieldname": "task_name",
+            "label": "Task Name",
+            "fieldtype": "Data",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "project",
+            "label": "Project",
+            "fieldtype": "Link",
+            "options": "Project",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "status",
+            "label": "Status",
+            "fieldtype": "Select",
+            "options": "Open\nIn Progress\nCompleted\nCancelled\nOn Hold",
+            "default": "Open",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "priority",
+            "label": "Priority",
+            "fieldtype": "Select",
+            "options": "Low\nMedium\nHigh\nUrgent",
+            "default": "Medium"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "wbs_code",
+            "label": "WBS Code",
+            "fieldtype": "Data",
+            "description": "Work Breakdown Structure Code, e.g., 1.1.2"
+        },
+        {
+            "fieldname": "assigned_to",
+            "label": "Assigned To",
+            "fieldtype": "Link",
+            "options": "User"
+        },
+        {
+            "fieldname": "percent_complete",
+            "label": "Percent Complete",
+            "fieldtype": "Percent",
+            "default": "0"
+        },
+        {
+            "fieldname": "section_dates",
+            "label": "Schedule",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "start_date",
+            "label": "Start Date",
+            "fieldtype": "Date",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "duration",
+            "label": "Duration (days)",
+            "fieldtype": "Float",
+            "description": "Estimated duration in days. End date is calculated if duration is set.",
+            "read_only_depends_on": "eval:doc.end_date",
+            "depends_on": "eval:!doc.end_date"
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "end_date",
+            "label": "End Date",
+            "fieldtype": "Date",
+            "reqd": 1,
+            "in_list_view": 1,
+            "read_only_depends_on": "eval:doc.duration && !doc.end_date",
+            "depends_on": "eval:!doc.duration"
+        },
+        {
+            "fieldname": "section_dependencies",
+            "label": "Dependencies",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "predecessor_task",
+            "label": "Predecessor Task",
+            "fieldtype": "Link",
+            "options": "Project Schedule Task",
+            "description": "Task that must be completed before this task can start."
+        },
+        {
+            "fieldname": "notes",
+            "label": "Notes",
+            "fieldtype": "Text Editor",
+            "collapsible": 1
+        }
+    ]
+}

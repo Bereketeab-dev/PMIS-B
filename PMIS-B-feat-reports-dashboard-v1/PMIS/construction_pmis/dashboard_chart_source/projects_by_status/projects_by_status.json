@@ -1,0 +1,15 @@
+{
+ "chart_name": "Projects by Status",
+ "chart_type": "Pie",
+ "custom_options": {},
+ "doc_status": 0,
+ "doctype": "Dashboard Chart Source",
+ "filters_json": "{}",
+ "is_public": 1,
+ "is_standard": 1,
+ "module": "Construction PMIS",
+ "name": "Projects by Status",
+ "owner": "Administrator",
+ "source_type": "Python",
+ "python_path": "construction_pmis.dashboard_chart_source.projects_by_status.projects_by_status.get_data"
+}

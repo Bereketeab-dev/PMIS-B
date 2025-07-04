@@ -1,0 +1,130 @@
+{
+    "name": "Contract Document",
+    "engine": "InnoDB",
+    "is_submittable": 0,
+    "ischild": 0,
+    "issingle": 0,
+    "istable": 0,
+    "module": "Construction PMIS",
+    "autoname": "format:CDOC-{project}-{#####}",
+    "creation": "YYYY-MM-DD HH:MM:SS.NNNNNN",
+    "modified": "YYYY-MM-DD HH:MM:SS.NNNNNN",
+    "modified_by": "Administrator",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "report": 1,
+            "share": 1
+        }
+    ],
+    "links": [
+        {
+            "link_doctype": "Project",
+            "link_fieldname": "project"
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1,
+    "fields": [
+        {
+            "fieldname": "document_name",
+            "label": "Document Name / Title",
+            "fieldtype": "Data",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "project",
+            "label": "Project",
+            "fieldtype": "Link",
+            "options": "Project",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "document_type",
+            "label": "Document Type",
+            "fieldtype": "Select",
+            "options": "Main Contract\nSubcontract Agreement\nMemorandum of Understanding (MoU)\nVariation Order Document\nAddendum\nLetter of Intent (LOI)\nNotice to Proceed (NTP)\nOther",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "party_type",
+            "label": "Party Type",
+            "fieldtype": "Select",
+            "options": "\nClient\nSupplier\nConsultant\nOther",
+            "description": "Select the type of the other party involved in this document."
+        },
+        {
+            "fieldname": "client",
+            "label": "Client",
+            "fieldtype": "Link",
+            "options": "Customer",
+            "depends_on": "eval:doc.party_type=='Client'"
+        },
+        {
+            "fieldname": "supplier",
+            "label": "Supplier / Subcontractor",
+            "fieldtype": "Link",
+            "options": "Supplier",
+            "depends_on": "eval:doc.party_type=='Supplier'"
+        },
+        {
+            "fieldname": "consultant",
+            "label": "Consultant",
+            "fieldtype": "Link",
+            "options": "Supplier",
+            "depends_on": "eval:doc.party_type=='Consultant'",
+            "description": "Link to Supplier if Consultants are managed as Suppliers."
+        },
+        {
+            "fieldname": "other_party_name",
+            "label": "Other Party Name",
+            "fieldtype": "Data",
+            "depends_on": "eval:doc.party_type=='Other'"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "signing_date",
+            "label": "Signing Date",
+            "fieldtype": "Date"
+        },
+        {
+            "fieldname": "effective_date",
+            "label": "Effective Date",
+            "fieldtype": "Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "expiry_date",
+            "label": "Expiry Date",
+            "fieldtype": "Date"
+        },
+        {
+            "fieldname": "section_attachments",
+            "label": "Attachments and Notes",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "file",
+            "label": "Attach Document File",
+            "fieldtype": "Attach"
+        },
+        {
+            "fieldname": "notes",
+            "label": "Notes",
+            "fieldtype": "Text Editor",
+            "collapsible": 1
+        }
+    ]
+}

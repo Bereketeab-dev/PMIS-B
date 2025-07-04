@@ -1,0 +1,22 @@
+{
+    "report_name": "Resource Allocation Report (Simple)",
+    "report_type": "Script Report",
+    "module": "Construction PMIS",
+    "is_standard": "Yes",
+    "filters": [
+        {
+            "fieldname": "project",
+            "label": "Project",
+            "fieldtype": "Link",
+            "options": "Project",
+            "width": "100"
+        },
+        {
+            "fieldname": "resource_type",
+            "label": "Resource Type",
+            "fieldtype": "Select",
+            "options": "\nManpower\nMachinery",
+            "width": "100"
+        }
+    ]
+}

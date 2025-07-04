@@ -1,0 +1,12 @@
+{
+    "label": "Total Overdue Tasks",
+    "name": "Total Overdue Tasks",
+    "owner": "Administrator",
+    "module": "Construction PMIS",
+    "type": "DocType",
+    "doctype": "Project Schedule Task",
+    "function": "Count",
+    "aggregate_function_based_on": "name",
+    "color": "#e74c3c",
+    "filters_json": "[[\"Project Schedule Task\",\"status\",\"!=\",\"Completed\"],[\"Project Schedule Task\",\"status\",\"!=\",\"Cancelled\"],[\"Project Schedule Task\",\"end_date\",\"<\",\"Today\"]]"
+}

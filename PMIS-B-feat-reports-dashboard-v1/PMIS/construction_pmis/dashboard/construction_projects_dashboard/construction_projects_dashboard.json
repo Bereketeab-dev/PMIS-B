@@ -1,0 +1,35 @@
+{
+    "cards": [
+        {
+            "card": "Total Active Projects"
+        },
+        {
+            "card": "Total Overdue Tasks"
+        },
+        {
+            "card": "Total Approved Estimate Value"
+        }
+    ],
+    "charts": [
+        {
+            "chart": "Projects by Status",
+            "width": "Half"
+        },
+        {
+            "chart": "Tasks by Status",
+            "width": "Half"
+        }
+    ],
+    "creation": "YYYY-MM-DD HH:MM:SS.NNNNNN",
+    "dashboard_name": "Construction Projects Dashboard",
+    "docstatus": 0,
+    "doctype": "Dashboard",
+    "idx": 0,
+    "is_default": 0,
+    "is_standard": 1,
+    "modified": "YYYY-MM-DD HH:MM:SS.NNNNNN",
+    "modified_by": "Administrator",
+    "module": "Construction PMIS",
+    "name": "Construction Projects Dashboard",
+    "owner": "Administrator"
+}
