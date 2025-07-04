@@ -1,6 +1,0 @@
-# Add your python dependencies here
-# frappe-sdk>=1.10.0
-# For ERPNext v14, specific dependencies are usually handled by the bench environment.
-# If you have direct python library needs for your custom app logic, list them here.
-# Example:
-# requests>=2.25.1
